@@ -10,7 +10,7 @@ git clone https://github.com/ROBOTIS-JAPAN-GIT/tb3mm_6DoF.git
 git clone https://github.com/m-tartari/realsense_gazebo_description.git
 git clone https://github.com/k11k22/d435_independent.git
 ```
-이후에 해당 Repositories git clone 하도록 하자
+이후에 관련 Repositorie들을 git clone 하도록 하자
 ```
 git clone https://github.com/JINANJINO/sara_dual_arms.git
 ```
