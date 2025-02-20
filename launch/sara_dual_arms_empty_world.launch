@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 빈 Gazebo 월드 실행 -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="use_sim_time" value="true" />
+        <arg name="gui" value="true" />
+        <arg name="paused" value="false" />
+        <arg name="debug" value="false" />
+    </include>
+
+    <!-- 로봇의 URDF(XACRO) 파일을 로드 -->
+    <param name="robot_description" textfile="$(find sara_dual_arms)/robot_description/sara_dual_arms.urdf" />
+
+    <!-- Gazebo에서 로봇 스폰 -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -param robot_description -model sara_dual_arms" />
+
+       <!-- (3) d435_camera 네임스페이스 그룹 -->
+    <group ns="d435_camera">
+
+      <!-- d435_camera.urdf.xacro 파일을 xacro로 파싱하여 파라미터로 등록 -->
+      <param name="robot_description"
+             command="$(find xacro)/xacro --inorder '$(find d435_independent)/urdf/d435_camera.urdf.xacro'"/>
+
+      <!-- Gazebo에 d435_camera 모델 스폰
+           - x=-2, y=1, z=-4
+           - yaw=-0.5(R=0,P=0,Y=-0.5)
+      -->
+      <node name="spawn_d435_camera" pkg="gazebo_ros" type="spawn_model"
+            args="-urdf -param robot_description -model d435_camera
+                  -x 0 -y 2.5 -z 0 -R 0 -P 0 -Y 0" />
+
+      <!-- 로봇 TF 정보 출력을 위한 robot_state_publisher (필요시) -->
+      <node name="robot_state_publisher_d435"
+            pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0"/>
+      </node>
+
+    </group>
+   
+</launch>
+

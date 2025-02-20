@@ -1,0 +1,87 @@
+sara_1_arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - sara_1_joint1
+    - sara_1_joint2
+    - sara_1_joint3
+    - sara_1_joint4
+    - sara_1_joint5
+    - sara_1_joint6
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      sara_1_joint1: {trajectory: 0.1, goal: 0.1}
+      sara_1_joint2: {trajectory: 0.1, goal: 0.1}
+      sara_1_joint3: {trajectory: 0.1, goal: 0.1}
+      sara_1_joint4: {trajectory: 0.1, goal: 0.1}
+      sara_1_joint5: {trajectory: 0.1, goal: 0.1}
+      sara_1_joint6: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+
+  gains:
+    sara_1_joint1: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_1_joint2: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_1_joint3: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_1_joint4: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_1_joint5: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_1_joint6: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+
+sara_2_arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - sara_2_joint1
+    - sara_2_joint2
+    - sara_2_joint3
+    - sara_2_joint4
+    - sara_2_joint5
+    - sara_2_joint6
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      sara_2_joint1: {trajectory: 0.1, goal: 0.1}
+      sara_2_joint2: {trajectory: 0.1, goal: 0.1}
+      sara_2_joint3: {trajectory: 0.1, goal: 0.1}
+      sara_2_joint4: {trajectory: 0.1, goal: 0.1}
+      sara_2_joint5: {trajectory: 0.1, goal: 0.1}
+      sara_2_joint6: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+
+  gains:
+    sara_2_joint1: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_2_joint2: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_2_joint3: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_2_joint4: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_2_joint5: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+    sara_2_joint6: {p: 300.0, i: 0.1, d: 1.0, i_clamp: 0.2}
+
+sara_1_gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - sara_1_gripper
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      sara_1_gripper: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  gains: # Required because we're controlling an effort interface
+    sara_1_gripper: {p: 100,  d: 1, i: 1, i_clamp: 1}
+
+sara_2_gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - sara_2_gripper
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      sara_2_gripper: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  gains: # Required because we're controlling an effort interface
+    sara_2_gripper: {p: 100,  d: 1, i: 1, i_clamp: 1}

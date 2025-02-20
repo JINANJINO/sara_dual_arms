@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- Robot state publisher -->
+<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="" />
+</node>
+
+<!-- Joint state controller -->
+<rosparam file="$(find sara_dual_arms)/config/joint_state_controller.yaml" command="load" />
+<node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller" respawn="false" output="screen" />
+
+<!-- Joint trajectory controller -->
+<rosparam file="$(find sara_dual_arms)/config/trajectory_controller.yaml" command="load" />
+<node name="arms_trajectory_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="sara_1_arm_controller sara_2_arm_controller sara_1_gripper_controller sara_2_gripper_controller" />
+
+
+<!-- Joint trajectory controller -->
+<rosparam file="$(find sara_dual_arms)/config/pid_gains.yaml" command="load" />
+<!-- (만약 다시 스포너를 중복 호출할 필요가 있으면 여기서) -->
+  <!--
+  <node name="arms_trajectory_controller_spawner_again" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="sara_1_arm_controller sara_2_arm_controller sara_1_gripper_controller sara_2_gripper_controller" />
+  -->
+
+</launch>
