@@ -15,7 +15,8 @@ git clone https://github.com/k11k22/d435_independent.git
 git clone https://github.com/JINANJINO/sara_dual_arms.git
 ```
 추가적으로 해당 launch 파일을 사용하기 위해서는 작성자(JINANJINO)의 moveit config와 관련된 내용을 git clone 하도록 한다.
-안의 내용이 궁금한 사람은 (https://github.com/JINANJINO/sara_dual_arms_moveit.git)
+
+moveit과 관련하여 내용이 궁금한 사람은 (https://github.com/JINANJINO/sara_dual_arms_moveit.git) 참조하도록 하자.
 ```
 https://github.com/JINANJINO/sara_dual_arms_moveit.git
 ```
