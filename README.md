@@ -17,6 +17,8 @@ git clone https://github.com/JINANJINO/sara_dual_arms.git
 추가적으로 해당 launch 파일을 사용하기 위해서는 작성자(JINANJINO)의 moveit config와 관련된 내용을 git clone 하도록 한다.
 
 moveit과 관련하여 내용이 궁금한 사람은 (https://github.com/JINANJINO/sara_dual_arms_moveit.git) 참조하도록 하자.
+
+마지막으로 현재 rviz환경, 로봇의 urdf, gazebo를 구동하도록하는 현재 repo에 있는 내용을 git clone을 한다.
 ```
 https://github.com/JINANJINO/sara_dual_arms_moveit.git
 ```
