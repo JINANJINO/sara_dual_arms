@@ -44,5 +44,6 @@ Figure1은 포팅된 Gazebo 환경의 모습이다.
 
 Figure2는 포팅된 rviz의 모습이다.
 이제 rviz의 컴포넌트에서 제어하고 싶은 manipulator를 선택하고 joint에서 원하는 각도를 설정한 후 plan 버튼을 누른 후 Execute 버튼을 누르면 아래와 같이 gazebo 환경에서 로봇이 구동되는 모습을 볼 수 있을 것이다.
+
 ![Screenshot from 2025-02-20 13-58-38](https://github.com/user-attachments/assets/61f20837-9bc4-4f39-b96b-2053ff8487c9)
 
