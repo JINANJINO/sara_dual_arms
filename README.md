@@ -37,3 +37,12 @@ roslaunch sara_dual_arms_moveit_config move_group.launch
 ```
 이후 해당 환경을 실행하면 rviz와 gazebo 환경이 포팅될 것이다.
 ![Screenshot from 2025-02-20 13-54-43](https://github.com/user-attachments/assets/491f8357-4868-4d37-848c-9d947c71b41e)
+
+Figure1은 포팅된 Gazebo 환경의 모습이다.
+
+![Screenshot from 2025-02-20 13-56-14](https://github.com/user-attachments/assets/547c7bc4-49fa-48c0-8b99-9316b8f6b423)
+
+Figure2는 포팅된 rviz의 모습이다.
+이제 rviz의 컴포넌트에서 제어하고 싶은 manipulator를 선택하고 joint에서 원하는 각도를 설정한 후 plan 버튼을 누른 후 Execute 버튼을 누르면 아래와 같이 gazebo 환경에서 로봇이 구동되는 모습을 볼 수 있을 것이다.
+![Screenshot from 2025-02-20 13-58-38](https://github.com/user-attachments/assets/61f20837-9bc4-4f39-b96b-2053ff8487c9)
+
