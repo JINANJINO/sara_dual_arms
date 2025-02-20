@@ -6,8 +6,14 @@
 mkdir -p dual_sara src
 git clone https://github.com/ROBOTIS-GIT/open_manipulator_friends.git
 git clone https://github.com/ROBOTIS-JAPAN-GIT/tb3mm_6DoF.git
+git clone https://github.com/m-tartari/realsense_gazebo_description.git
+git clone https://github.com/k11k22/d435_independent.git
 ```
 이후에 해당 Repositories git clone 하도록 하자
 ```
-git clone
+git clone https://github.com/JINANJINO/sara_dual_arms.git
+```
+추가적으로 해당 launch 파일을 사용하기 위해서는 작성자(JINANJINO)의 moveit config와 관련된 내용을 git clone 하도록 한다.
+```
+
 ```
